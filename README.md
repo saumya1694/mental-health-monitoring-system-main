@@ -30,8 +30,4 @@ This project analyzes social media text to detect mental health conditions using
 - Mental health prediction
 - Simple UI
 
-## 📸 Screenshots
-(Add screenshots later)
 
-## 👩‍💻 Author
-Your Name
