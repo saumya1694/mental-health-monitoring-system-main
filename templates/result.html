@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #f9f9f9;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% extends "base.html" %}
+    {% block content %}
+
+    <div class="card p-4 text-center">
+        <h3>Result</h3>
+
+        <p><b>Your Text:</b> {{text}}</p>
+
+        <h4 class="text-primary">{{result}}</h4>
+
+        <p>{{suggestion}}</p>
+
+        <a href="/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
