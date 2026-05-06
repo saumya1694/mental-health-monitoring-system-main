@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #fff3e6;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% extends "base.html" %}
+    {% block content %}
+
+    <div class="row">
+
+        <!-- LEFT SIDE: INPUT -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4>Analyze Your Mood</h4>
+
+                <form action="/predict" method="post">
+                    <textarea class="form-control mb-2" name="text" rows="4"
+                        placeholder="Write your feelings..."></textarea>
+                    <button class="btn btn-primary">Analyze</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: GRAPH -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4>Emotion Summary</h4>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Depression', 'Stress', 'Normal'],
+                datasets: [{
+                    label: 'User Mood Data',
+                    data: [3, 2, 5],  // 🔥 YOU CAN CHANGE THIS
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+
+    <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+
+    {% endblock %}
+
+</body>
+
+</html>
